@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>国庆头像</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+      h1 {
+        color: #333;
+      }
+      form {
+        margin: 20px;
+      }
+      input[type="file"] {
+        margin-bottom: 10px;
+      }
+      .button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        text-decoration: none;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      hr {
+        margin: 20px 0;
+        border: 1px solid #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>国庆头像</h1>
+    <hr />
+    <form id="upload" method="post" action="{{ url_for('upload') }}" enctype="multipart/form-data">
+        <div>
+            <input id="img" type="file" name="img"/>
+            <br />
+            <br />
+            <br />
+            <input type="submit" class="button" value="上传">
+        </div>
+    </form>
+    
+    <br />
+
+    <a href="{{ url_for('shows') }}">
+        <button class="button">查看往期生成的国庆头像</button>
+    </a>
+  </body>
+</html>
